@@ -1,0 +1,11 @@
+#!/bin/bash --login
+
+module load Stata/17.MP
+
+cd /mnt/home/gardn366/NCHS/Stata - Natality/Analysis/Stata - Natality/Analysis
+
+srun -n 1 stata-mp -b do TRAP_Analysis_Comp2.do
+
+scontrol show job $SLURM_JOB_ID
+
+
